@@ -39,12 +39,12 @@ void UltrasonSetup(){
 }
 
 void SendMessage(char *message){
-  Serial.print("Envoi du message")
+  Serial.print("Envoi du message");
   //Envoi du message avec conversion en byte (1) et longueur du message (2)
   vw_send((uint8_t *)message, strlen(message));
   //Attent asynchrone du message
   vw_wait_tx();
-  Serial.println("Termine !")
+  Serial.println("Termine !");
 }
 
 float TakeMeasurement(){
