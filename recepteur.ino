@@ -32,16 +32,15 @@ void loop()
    if (switchstate == HIGH) {
       digitalWrite(2, LOW);
    }
-   if (PresenceOfLetter()){
-      Serial.println("Lettre !");
+   if (PresenceOfLetter())
+      Serial.println("Lettre !")
       digitalWrite(2, HIGH);
    }
 }
 
 bool PresenceOfLetter(){
   //Verifie la presence d'un message dans le buffer de VirtualWire puis copie sur le buffer local
-  if(vw_wait_rx_max(200) && vw_get_message(buf, &buflen)){
+  if(vw_wait_rx_max(200) && vw_get_message(buf, &buflen))
     return true;
-  } 
   return false;
 }
